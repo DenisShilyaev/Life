@@ -8,7 +8,7 @@ const FIELD_COLOR = 'blue'; //Цвет жизни
 const canvas = document.querySelector('canvas');
 const context = canvas.getContext('2d');
 
-const lifeGame = new LifeGame(ROWS_NUMBER, COLUMNS_NUMBER);
+const lifeGame = new LifeGame (ROWS_NUMBER, COLUMNS_NUMBER);
 
 const start = () => {
     canvas.width = FIELD_SIZE * COLUMNS_NUMBER //Задаем ширину canvas
