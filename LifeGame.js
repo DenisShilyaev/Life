@@ -38,7 +38,7 @@ class LifeGame {
     };
 
     forFreeEach(hander) {
-        for (let y = 0; y < this.rows; y++) {//Перебираем всё поле
+        for (let y = 0; y < this.rows; y++) {//Перебираем всё игровое поле
             for (let x = 0; x < this.columns; x++) {
                 if (this.getField(x, y) === true) { //Если ячейка содержит true (то есть она живая)
                     hander(x, y); //Вызываем hander с данными координатами

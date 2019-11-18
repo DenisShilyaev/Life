@@ -13,11 +13,17 @@ const lifeGame = new LifeGame (ROWS_NUMBER, COLUMNS_NUMBER);
 const start = () => {
     canvas.width = FIELD_SIZE * COLUMNS_NUMBER //Задаем ширину canvas
     canvas.height = FIELD_SIZE * ROWS_NUMBER //Задаем высоту canvas
-    
+
     lifeGame.reviveRandomFields(50);
 
-    clearCanvas();
-    drawField (1, 1, FIELD_COLOR);
+    requestAnimationFrame(tick());
+}
+
+const tick = () => { //Функция обновляет экран
+    clearCanvas(); //Очищаем поле
+    lifeGame.forFreeEach((x, y) => drawField (x, y, FIELD_COLOR));//Отрисовываем живые клетки
+
+	requestAnimationFrame(tick());//Зацикливаем функцию
 }
 
 const clearCanvas = () => {//Очищаем поле
