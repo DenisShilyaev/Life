@@ -1,9 +1,9 @@
-const FIELD_SIZE = 50; //Размер ячейки
-const ROWS_NUMBER = 10; //Количество строк
-const COLUMNS_NUMBER = 10; //Количество столбцов
+const FIELD_SIZE = 5; //Размер ячейки
+const ROWS_NUMBER = 100; //Количество строк
+const COLUMNS_NUMBER = 100; //Количество столбцов
 const BACKGROUND_COLOR = 'gray'; //Цвет фона
 const FIELD_COLOR = 'blue'; //Цвет жизни
-const GENERATION_TIME = 1000; //Время, через которое будет производится итерация обновления жизни
+const GENERATION_TIME = 100; //Время, через которое будет производится итерация обновления жизни
 
 
 const canvas = document.querySelector('canvas');
@@ -15,9 +15,9 @@ const start = () => {
     canvas.width = FIELD_SIZE * COLUMNS_NUMBER //Задаем ширину canvas
     canvas.height = FIELD_SIZE * ROWS_NUMBER //Задаем высоту canvas
 
-    lifeGame.reviveRandomFields(50);
+    lifeGame.reviveRandomFields(ROWS_NUMBER * COLUMNS_NUMBER / 2);
 
-    requestAnimationFrame(tick());
+    requestAnimationFrame(tick);
 }
 
 const tick = (timestamp) => { //Функция обновляет экран
@@ -29,7 +29,7 @@ const tick = (timestamp) => { //Функция обновляет экран
 
     lifeGame.forFreeEach((x, y) => drawField(x, y, FIELD_COLOR)); //Отрисовываем живые клетки
 
-    requestAnimationFrame(tick()); //Зацикливаем функцию
+    requestAnimationFrame(tick); //Зацикливаем функцию
 }
 
 const clearCanvas = () => { //Очищаем поле
