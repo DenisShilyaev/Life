@@ -22,7 +22,7 @@
 
 Смотрите рисунок интерфейса игры ниже:
 
-![Image alt](https://github.com/DenisShilyaev/Life/raw/master/for_README/Interface.png)
+![Image alt](https://github.com/DenisShilyaev/Life/raw/master/for_README/Interface.PNG)
 
 
 Если Вы нашли ошибку или у Вас есть предложение по улучшению проекта, то, пожалуйста, напишите мне.
